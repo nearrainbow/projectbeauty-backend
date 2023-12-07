@@ -18,7 +18,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-
+// http://47.236.25.128/images/Icon%20design%20SVG.png
 
 
 const storage = multer.diskStorage({
@@ -37,7 +37,7 @@ app.post('/api/upload_image', upload.array("files"), (req, res) => {
 
   res.json({ 
     message: "File(s) uploaded successfullys", 
-    path: '/images/' + req.files[0].originalname
+    path: '/api/images/' + req.files[0].originalname
   });
 });
 
@@ -75,7 +75,8 @@ app.post('/api/test', async (req, res) =>  {
   
 });
 
-app.use(express.static('backend/public'))
+// app.use(express.static('backend/public'))
+app.use("/api/", express.static('backend/public'))
 
 app.get("/", (req, res) => {
   res.json({ message: "API running..." });
