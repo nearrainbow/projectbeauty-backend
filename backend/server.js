@@ -82,7 +82,11 @@ app.get("/", (req, res) => {
   res.json({ message: "API running..." });
 });
 
+
 app.get("/api/test", (req, res) => {
+  res.json({ message: "API running..." });
+});
+app.get("/api/test/", (req, res) => {
   res.json({ message: "API running..." });
 });
 app.use("/api/products", productRoutes);
