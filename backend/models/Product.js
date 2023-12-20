@@ -31,6 +31,9 @@ const productSchema = mongoose.Schema({
   }],
   category: {
     type: String,
+  },
+  sort: {
+    type: Number
   }
   },
   {
