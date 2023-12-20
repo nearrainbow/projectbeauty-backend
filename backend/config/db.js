@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const connectDB = async () => {
   try {
     await mongoose.connect(
-      process.env.MONGO_URI || 'mongodb://localhost:27017',
+      'mongodb://latte:Latte24816@47.236.25.128:27017/?authMechanism=DEFAULT&authSource=test',
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
