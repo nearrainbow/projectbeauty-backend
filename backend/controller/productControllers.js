@@ -46,7 +46,7 @@ const addProduct = async (req, res) => {
       const number = await Product.countDocuments();
       await Product.create({
         ...req.body, 
-        sort: number
+        sort: number+1 
       })
     }
     res.json({ message: "success" });
