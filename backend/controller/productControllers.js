@@ -43,7 +43,7 @@ const addProduct = async (req, res) => {
         {upsert: true},
       )
     } else {
-      const number = await Model.countDocuments();
+      const number = await Product.countDocuments();
       await Product.create({
         ...req.body, 
         sort: number
